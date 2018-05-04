@@ -1,0 +1,24 @@
+galaxy_info:
+  author: Frederick F. Kautz IV
+  description: Installs OpenVSwitch
+  company: Red Hat
+
+  license: Apache-2.0
+
+  min_ansible_version: 1.2
+
+  platforms:
+    - name: EL
+      versions:
+        - 7
+    - name: Ubuntu
+      versions:
+        - xenial
+
+  galaxy_tags: [
+    sdn
+    openvswitch
+    ovs
+  ]
+
+dependencies: []

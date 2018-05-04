@@ -1,0 +1,4 @@
+---
+openvswitch_version: 2.9.0
+openvswitch_checksum: sha256:3699ce579acd346e9aa2fba89514cdcc79b231f6227659eea6714917b398419d
+openvswitch_package_cache: /tmp/ovs-cache
