@@ -38,7 +38,7 @@
             url: 'http://openvswitch.org/releases/openvswitch-{{openvswitch_version}}.tar.gz'
             dest: '{{openvswitch_package_cache}}/openvswitch-{{openvswitch_version}}.tar.gz'
             checksum: '{{openvswitch_checksum}}'
-          creates: '{{openvswitch_package_cache}}/openvswitch-{{openvswitch_version}}.tar.gz'
+            creates: '{{openvswitch_package_cache}}/openvswitch-{{openvswitch_version}}.tar.gz'
         - name: 'Unarchive OpenVSwitch {{openvswitch_version}}'
           unarchive:
             src: '{{openvswitch_package_cache}}/openvswitch-{{openvswitch_version}}.tar.gz'
