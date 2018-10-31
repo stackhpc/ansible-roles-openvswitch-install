@@ -8,8 +8,8 @@ driver:
 lint:
   name: yamllint
 platforms:
-  #- name: centos
-  #  box: bento/centos-7.4
+  # - name: centos
+  #   box: bento/centos-7.4
   - name: ubuntu
     box: bento/ubuntu-16.04
 provisioner:
