@@ -16,10 +16,9 @@ galaxy_info:
       versions:
         - xenial
 
-  galaxy_tags: [
-    sdn
-    openvswitch
-    ovs
-  ]
+  galaxy_tags:
+    - sdn
+    - openvswitch
+    - ovs
 
 dependencies: []
