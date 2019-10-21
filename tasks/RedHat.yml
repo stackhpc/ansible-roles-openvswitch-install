@@ -19,7 +19,7 @@
         - libcap-ng-devel
       become: true
     - name: Search for prebuilt packages
-      stat: 'path={{openvswitch_package_cache}}/openvswitch-{{openvswitch_version}}-1.el7.centos.x86_64.rpm'
+      stat: 'path={{openvswitch_package_cache}}/openvswitch-{{openvswitch_version}}-1.el7.x86_64.rpm'
       register: openvswitch_package_exists
     - name: Build OVS
       block:
@@ -68,17 +68,17 @@
           shell: make rpm-fedora
           args:
             chdir: '/tmp/ovs/openvswitch-{{openvswitch_version}}'
-            creates: '/tmp/ovs/openvswitch-{{openvswitch_version}}/rpm/rpmbuild/RPMS/x86_64/openvswitch-{{openvswitch_version}}-1.el7.centos.x86_64.rpm'
+            creates: '/tmp/ovs/openvswitch-{{openvswitch_version}}/rpm/rpmbuild/RPMS/x86_64/openvswitch-{{openvswitch_version}}-1.el7.x86_64.rpm'
         - name: 'Copy OpenVSwitch packages to cache'
           copy:
-            src: '/tmp/ovs/openvswitch-{{openvswitch_version}}/rpm/rpmbuild/RPMS/x86_64/openvswitch-{{openvswitch_version}}-1.el7.centos.x86_64.rpm'
-            dest: '{{openvswitch_package_cache}}/openvswitch-{{openvswitch_version}}-1.el7.centos.x86_64.rpm'
+            src: '/tmp/ovs/openvswitch-{{openvswitch_version}}/rpm/rpmbuild/RPMS/x86_64/openvswitch-{{openvswitch_version}}-1.el7.x86_64.rpm'
+            dest: '{{openvswitch_package_cache}}/openvswitch-{{openvswitch_version}}-1.el7.x86_64.rpm'
             remote_src: true
       when: not openvswitch_package_exists.stat.exists
     - name: 'Install OpenVSwitch {{openvswitch_version}}'
       yum: 'name={{item}}'
       with_items:
-        - '{{openvswitch_package_cache}}/openvswitch-{{openvswitch_version}}-1.el7.centos.x86_64.rpm'
+        - '{{openvswitch_package_cache}}/openvswitch-{{openvswitch_version}}-1.el7.x86_64.rpm'
       become: true
     - name: Enable openvswitch service
       systemd:
