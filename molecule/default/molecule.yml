@@ -4,14 +4,14 @@ dependency:
 driver:
   name: vagrant
   provider:
-    name: virtualbox
+    name: libvirt
 lint:
   name: yamllint
 platforms:
   # - name: centos
   #   box: bento/centos-7.4
   - name: ubuntu
-    box: bento/ubuntu-16.04
+    box: generic/ubuntu1604
 provisioner:
   name: ansible
   lint:
